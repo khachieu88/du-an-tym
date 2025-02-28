@@ -1,0 +1,70 @@
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Trái Tim 3D Nhịp Đập</title>
+      <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #ffffff; /* Nền trắng */
+          overflow: hidden;
+        }
+
+        .heart {
+          width: 150px;
+          height: 150px;
+          background: linear-gradient(
+            145deg,
+            #ff4d4d,
+            #ff1a1a
+          ); /* Hiệu ứng 3D */
+          position: relative;
+          transform: rotate(-45deg);
+          animation: heartbeat 2s ease-in-out infinite;
+          box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5); /* Bóng đổ */
+        }
+
+        .heart::before,
+        .heart::after {
+          content: "";
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          background: inherit; /* Kế thừa gradient */
+          border-radius: 50%;
+        }
+
+        .heart::before {
+          top: -75px;
+          left: 0;
+        }
+
+        .heart::after {
+          left: 75px;
+          top: 0;
+        }
+
+        /* Hiệu ứng nhịp đập mượt mà */
+        @keyframes heartbeat {
+          0%,
+          100% {
+            transform: scale(1) rotate(-45deg);
+          }
+
+          50% {
+            transform: scale(1.4) rotate(-45deg);
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="heart"></div>
+    </body>
+  </html>
+</DOCTYPE>
